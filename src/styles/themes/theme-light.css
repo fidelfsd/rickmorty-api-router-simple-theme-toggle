@@ -1,0 +1,15 @@
+:root {
+    --bg-color: #f7f7f7;
+    --text-color: #333;
+    --accent-color-start: #4d4dff;
+    --accent-color-end: #3300ff;
+    --error-color: #ff3333;
+    --button-bg-color: #007bff;
+    --button-text-color: #fff;
+    --button-disabled-bg-color: #ccc;
+    --button-hover-bg-color: #0056b3;
+    --loader-color: #3498db;
+
+    --gradient-start: #f0f4f8;
+    --gradient-end: #d9e2ec;
+}

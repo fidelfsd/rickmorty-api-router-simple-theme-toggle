@@ -1,0 +1,64 @@
+.character-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    width: 250px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.character-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.character-card .character-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.character-card h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.character-card p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.character-card .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.character-card button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.character-card button:hover {
+    background-color: #0056b3;
+}
