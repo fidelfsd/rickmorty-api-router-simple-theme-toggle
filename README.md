@@ -16,8 +16,7 @@ This project is a simple web application that utilizes the Rick and Morty API to
 ## Getting Started
 1. Clone the repository to your local machine.
 2. Install dependencies by running `npm install`.
-3. Start the development server with `npm start`.
-4. Open your browser and navigate to `http://localhost:3000` to view the application.
+3. Start the development server with `npm run dev`.
 
 ## Usage
 - Click on the navigation links to explore different pages.
