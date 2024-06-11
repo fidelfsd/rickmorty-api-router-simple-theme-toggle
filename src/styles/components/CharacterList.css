@@ -47,16 +47,3 @@
     color: var(--text-color);
 }
 
-.detail-section {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.detail-section p {
-    margin-bottom: 10px;
-}
-
-.detail-section p strong::before {
-    content: "🌟 ";
-    margin-right: 5px;
-}
