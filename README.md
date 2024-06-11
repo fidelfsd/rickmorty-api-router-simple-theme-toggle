@@ -1,8 +1,31 @@
-# React + Vite
+# Rick and Morty API Simple Version
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple web application that utilizes the Rick and Morty API to display information about characters from the show. It allows users to navigate through different pages, view details of individual characters, and switch between light and dark themes.
 
-Currently, two official plugins are available:
+## Features
+- View a list of characters from the Rick and Morty universe.
+- Click on a character to see more details.
+- Toggle between light and dark themes for better user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- React.js for building the user interface.
+- React Router for handling navigation within the application.
+- Rick and Morty API for fetching character data.
+- CSS for styling the components and implementing theme switching.
+
+## Getting Started
+1. Clone the repository to your local machine.
+2. Install dependencies by running `npm install`.
+3. Start the development server with `npm start`.
+4. Open your browser and navigate to `http://localhost:3000` to view the application.
+
+## Usage
+- Click on the navigation links to explore different pages.
+- Click on a character card to view more details about that character.
+- Toggle between light and dark themes using the theme switch button in the header.
+
+## Contributing
+Contributions are welcome! If you find any bugs or have suggestions for improvement, please open an issue or submit a pull request.
+
+## License
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
