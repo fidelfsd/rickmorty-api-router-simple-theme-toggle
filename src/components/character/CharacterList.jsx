@@ -1,4 +1,3 @@
-// src/components/CharacterList/CharacterList.js
 import { useEffect, useState } from "react";
 import rickMortyService from "../../services/rickMorty";
 import Loader from "../common/Loader";
@@ -9,16 +8,16 @@ export default function CharacterList() {
    const [characters, setCharacters] = useState([]);
    const [loading, setLoading] = useState(true);
    const [error, setError] = useState(null);
-   const [page, setPage] = useState(1); // Estado para la página actual
-   const [totalPages, setTotalPages] = useState(0); // Estado para el número total de páginas
+   const [page, setPage] = useState(1);
+   const [totalPages, setTotalPages] = useState(0);
 
    useEffect(() => {
       const fetchCharacters = async () => {
-         setLoading(true); // Mostrar el cargador al cambiar de página
+         setLoading(true);
          try {
-            const data = await rickMortyService.characters.getAll(page); // Pasar la página al servicio
+            const data = await rickMortyService.characters.getAll(page);
             setCharacters(data.results);
-            setTotalPages(data.info.pages); // Establecer el número total de páginas
+            setTotalPages(data.info.pages);
          } catch (err) {
             setError(err.message);
          } finally {
@@ -27,9 +26,8 @@ export default function CharacterList() {
       };
 
       fetchCharacters();
-   }, [page]); // Agregar `page` como dependencia para recargar al cambiar de página
+   }, [page]);
 
-   // Manejar la navegación de la página
    const handlePrevPage = () => {
       if (page > 1) setPage(page - 1);
    };
