@@ -1,12 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import HomePage from "@pages/HomePage";
-import CharacterDetailsPage from "@pages/CharacterDetailsPage";
-import AboutPage from "@pages/AboutPage";
-import NotFoundPage from "@pages/NotFoundPage";
-
-import Header from "@components/layout/Header";
-import Footer from "@components/layout/Footer";
+import { HomePage, CharacterDetailsPage, AboutPage, NotFoundPage } from "@pages";
+import { Footer, Header } from "@components/layout";
 
 export default function AppRoutes() {
    return (
