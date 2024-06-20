@@ -1,6 +1,6 @@
+import rickMortyService from "@services/rickMorty";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import rickMortyService from "../services/rickMorty";
 
 export const useCharacterDetail = () => {
    const { id } = useParams();

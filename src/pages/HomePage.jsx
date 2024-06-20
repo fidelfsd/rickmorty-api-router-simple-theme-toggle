@@ -1,5 +1,5 @@
-import CharacterList from "../components/character/CharacterList";
-import "../styles/pages/HomePage.css";
+import CharacterList from "@components/character/CharacterList";
+import "@styles/pages/HomePage.css";
 
 export default function HomePage() {
    return (

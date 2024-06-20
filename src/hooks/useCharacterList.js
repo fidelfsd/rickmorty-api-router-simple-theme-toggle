@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import rickMortyService from "../services/rickMorty";
+import rickMortyService from "@services/rickMorty";
 
 export const useCharacterList = () => {
    const [characters, setCharacters] = useState([]);

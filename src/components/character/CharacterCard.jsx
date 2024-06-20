@@ -1,5 +1,5 @@
+import "@styles/components/CharacterCard.css";
 import { useNavigate } from "react-router-dom";
-import "../../styles/components/CharacterCard.css";
 
 export default function CharacterCard({ character }) {
    const navigate = useNavigate();

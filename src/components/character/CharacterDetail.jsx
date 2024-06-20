@@ -1,6 +1,6 @@
-import Loader from "../common/Loader";
-import "../../styles/components/CharacterDetail.css";
-import { useCharacterDetail } from "../../hooks/useCharacterDetail";
+import "@styles/components/CharacterDetail.css";
+import Loader from "@components/common/Loader";
+import { useCharacterDetail } from "@hooks/useCharacterDetail";
 
 export default function CharacterDetail() {
    const { character, error, loading } = useCharacterDetail();

@@ -1,7 +1,7 @@
-import Loader from "../common/Loader";
+import "@styles/components/CharacterList.css";
 import CharacterCard from "./CharacterCard";
-import "../../styles/components/CharacterList.css";
-import { useCharacterList } from "../../hooks/useCharacterList";
+import Loader from "@components/common/Loader";
+import { useCharacterList } from "@hooks/useCharacterList";
 
 export default function CharacterList() {
    const {

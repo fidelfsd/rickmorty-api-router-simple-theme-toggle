@@ -1,4 +1,4 @@
-import CharacterDetail from "../components/character/CharacterDetail";
+import CharacterDetail from "@components/character/CharacterDetail";
 
 export default function CharacterDetailsPage() {
    return (
