@@ -1,29 +1,9 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import Loader from "../common/Loader";
-import rickMortyService from "../../services/rickMorty";
 import "../../styles/components/CharacterDetail.css";
+import { useCharacterDetail } from "../../hooks/useCharacterDetail";
 
 export default function CharacterDetail() {
-   const { id } = useParams();
-   const [character, setCharacter] = useState(null);
-   const [loading, setLoading] = useState(true);
-   const [error, setError] = useState(null);
-
-   useEffect(() => {
-      const fetchCharacter = async () => {
-         try {
-            const data = await rickMortyService.characters.getById(id);
-            setCharacter(data);
-         } catch (err) {
-            setError(err.message);
-         } finally {
-            setLoading(false);
-         }
-      };
-
-      fetchCharacter();
-   }, [id]);
+   const { character, error, loading } = useCharacterDetail();
 
    if (loading) return <Loader />;
    if (error) return <p className="error-message">Error: {error}</p>;

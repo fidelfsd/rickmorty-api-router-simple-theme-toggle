@@ -2,7 +2,7 @@ const BASE_URL = "https://rickandmortyapi.com/api/character";
 
 const characterService = {
    getAll: async function (page = 1) {
-      await sleep(500);
+      // await sleep(500);
       const apiUrl = `${BASE_URL}/?page=${page}`;
       try {
          const response = await fetch(apiUrl);
@@ -17,7 +17,7 @@ const characterService = {
    },
 
    getById: async function (id) {
-      await sleep(500);
+      // await sleep(500);
       const apiUrl = `${BASE_URL}/${id}`;
       try {
          const response = await fetch(apiUrl);
