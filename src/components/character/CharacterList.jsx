@@ -2,17 +2,11 @@ import "@styles/components/CharacterList.css";
 import CharacterCard from "./CharacterCard";
 import Loader from "@components/common/Loader";
 import { useCharacterList } from "@hooks/useCharacterList";
+import { usePagination } from "@hooks/usePagination"; 
 
 export default function CharacterList() {
-   const {
-      characters,
-      error,
-      page,
-      totalPages,
-      loading,
-      handlePrevPage,
-      handleNextPage,
-   } = useCharacterList();
+   const { characters, error, totalPages, loading } = useCharacterList();
+   const { page, handlePrevPage, handleNextPage } = usePagination();
 
    if (loading) return <Loader />;
    if (error) return <p>Error: {error}</p>;
@@ -31,7 +25,10 @@ export default function CharacterList() {
             <span>
                Page {page} of {totalPages}
             </span>
-            <button onClick={handleNextPage} disabled={page === totalPages}>
+            <button
+               onClick={() => handleNextPage(totalPages)}
+               disabled={page === totalPages}
+            >
                Next
             </button>
          </div>

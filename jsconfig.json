@@ -19,6 +19,9 @@
             ],
             "@routes/*": [
                 "routes/*"
+            ],
+            "@context/*": [
+                "context/*"
             ]
         }
     }

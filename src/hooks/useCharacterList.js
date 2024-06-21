@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import rickMortyService from "@services/rickMorty";
+import { usePagination } from "./usePagination";
 
 export const useCharacterList = () => {
+   const { page } = usePagination();
    const [characters, setCharacters] = useState([]);
    const [loading, setLoading] = useState(true);
    const [error, setError] = useState(null);
-   const [page, setPage] = useState(1);
    const [totalPages, setTotalPages] = useState(0);
 
    useEffect(() => {
@@ -25,21 +26,10 @@ export const useCharacterList = () => {
       fetchCharacters();
    }, [page]);
 
-   const handlePrevPage = () => {
-      if (page > 1) setPage(page - 1);
-   };
-
-   const handleNextPage = () => {
-      if (page < totalPages) setPage(page + 1);
-   };
-
    return {
       characters,
-      page,
       totalPages,
       error,
       loading,
-      handleNextPage,
-      handlePrevPage,
    };
 };
