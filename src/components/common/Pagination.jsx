@@ -41,7 +41,7 @@ const Pagination = ({
    return (
       <div className="pagination-container" style={style}>
          <button onClick={() => handlePageChange(1)} disabled={page === 1}>
-            First
+            1
          </button>
          <button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
             {prevLabel}
@@ -65,7 +65,7 @@ const Pagination = ({
             onClick={() => handlePageChange(totalPages)}
             disabled={page === totalPages}
          >
-            Last
+            {totalPages}
          </button>
       </div>
    );
