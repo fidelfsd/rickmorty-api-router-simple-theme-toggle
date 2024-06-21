@@ -1,6 +1,5 @@
-
 import PropTypes from "prop-types";
-import "@styles/components/Pagination.css"; // Importa el CSS específico de la paginación
+import "@styles/components/Pagination.css";
 
 /**
  * Pagination Component
@@ -41,16 +40,10 @@ const Pagination = ({
 
    return (
       <div className="pagination-container" style={style}>
-         <button
-            onClick={() => handlePageChange(1)}
-            disabled={page === 1}
-         >
+         <button onClick={() => handlePageChange(1)} disabled={page === 1}>
             First
          </button>
-         <button
-            onClick={() => handlePageChange(page - 1)}
-            disabled={page === 1}
-         >
+         <button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
             {prevLabel}
          </button>
          {getPageNumbers().map((num) => (
@@ -78,7 +71,6 @@ const Pagination = ({
    );
 };
 
-// Definición de los tipos de propiedades
 Pagination.propTypes = {
    page: PropTypes.number.isRequired,
    totalPages: PropTypes.number.isRequired,
