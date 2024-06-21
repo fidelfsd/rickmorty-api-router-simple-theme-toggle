@@ -2,36 +2,23 @@ import "@styles/components/CharacterList.css";
 import CharacterCard from "./CharacterCard";
 import Loader from "@components/common/Loader";
 import { useCharacterList } from "@hooks/useCharacterList";
-import { usePagination } from "@hooks/usePagination"; 
+import Pagination from "@components/common/Pagination";
 
 export default function CharacterList() {
    const { characters, error, totalPages, loading } = useCharacterList();
-   const { page, handlePrevPage, handleNextPage } = usePagination();
 
    if (loading) return <Loader />;
    if (error) return <p>Error: {error}</p>;
 
    return (
       <div className="character-list-container">
+         <Pagination totalPages={totalPages} />
          <div className="character-list">
             {characters.map((character) => (
                <CharacterCard key={character.id} character={character} />
             ))}
          </div>
-         <div className="pagination-container">
-            <button onClick={handlePrevPage} disabled={page === 1}>
-               Previous
-            </button>
-            <span>
-               Page {page} of {totalPages}
-            </span>
-            <button
-               onClick={() => handleNextPage(totalPages)}
-               disabled={page === totalPages}
-            >
-               Next
-            </button>
-         </div>
+         <Pagination totalPages={totalPages} />
       </div>
    );
 }
