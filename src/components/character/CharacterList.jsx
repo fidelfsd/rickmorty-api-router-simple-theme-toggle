@@ -7,7 +7,7 @@ import { usePagination } from "@hooks/usePagination";
 
 export default function CharacterList() {
    const { characters, error, totalPages, loading } = useCharacterList();
-   const { page, handlePrevPage, handleNextPage } = usePagination();
+   const { page, handlePageChange } = usePagination();
 
    if (loading) return <Loader />;
    if (error) return <p>Error: {error}</p>;
@@ -17,9 +17,8 @@ export default function CharacterList() {
          <Pagination
             page={page}
             totalPages={totalPages}
-            onPrevPage={handlePrevPage}
-            onNextPage={() => handleNextPage(totalPages)}
-            prevLabel="Previous"
+            onPageChange={handlePageChange}
+            prevLabel="Prev"
             nextLabel="Next"
             style={{ marginBottom: "20px" }}
          />
@@ -28,13 +27,11 @@ export default function CharacterList() {
                <CharacterCard key={character.id} character={character} />
             ))}
          </div>
-
          <Pagination
             page={page}
             totalPages={totalPages}
-            onPrevPage={handlePrevPage}
-            onNextPage={() => handleNextPage(totalPages)}
-            prevLabel="Previous"
+            onPageChange={handlePageChange}
+            prevLabel="Prev"
             nextLabel="Next"
             style={{ marginTop: "20px" }}
          />
