@@ -1,12 +1,15 @@
 import { PaginationProvider } from "@context/pagination/PaginationProvider";
 import router from "./routes";
 import { RouterProvider } from "react-router-dom";
+import ThemeProvider from "@context/theme/ThemeProvider";
 
 function App() {
    return (
-      <PaginationProvider>
-         <RouterProvider router={router} />;
-      </PaginationProvider>
+      <ThemeProvider>
+         <PaginationProvider>
+            <RouterProvider router={router} />;
+         </PaginationProvider>
+      </ThemeProvider>
    );
 }
 
