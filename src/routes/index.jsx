@@ -1,21 +1,30 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import { createBrowserRouter } from "react-router-dom";
 import { HomePage, CharacterDetailsPage, AboutPage, NotFoundPage } from "@pages";
-import { Footer, Header } from "@components/layout";
+import { MainLayout } from "@components/layout";
 
-export default function AppRoutes() {
-   return (
-      <BrowserRouter>
-         <Header />
-         <div className="content">
-            <Routes>
-               <Route path="/" element={<HomePage />} />
-               <Route path="/character/:id" element={<CharacterDetailsPage />} />
-               <Route path="/about" element={<AboutPage />} />
-               <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-         </div>
-         <Footer />
-      </BrowserRouter>
-   );
-}
+const router = createBrowserRouter([
+   {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+         {
+            index: true,
+            element: <HomePage />,
+         },
+         {
+            path: "character/:id",
+            element: <CharacterDetailsPage />,
+         },
+         {
+            path: "about",
+            element: <AboutPage />,
+         },
+         {
+            path: "*",
+            element: <NotFoundPage />,
+         },
+      ],
+   },
+]);
+
+export default router;
