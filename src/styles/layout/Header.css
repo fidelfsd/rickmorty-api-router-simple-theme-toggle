@@ -19,17 +19,4 @@
     margin: 0 10px;
 }
 
-.theme-toggle {
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-left: auto;
-}
-
-.theme-toggle:hover {
-    background-color: var(--button-hover-bg-color);
-}
+.
