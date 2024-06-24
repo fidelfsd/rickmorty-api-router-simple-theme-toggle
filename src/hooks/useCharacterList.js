@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import rickMortyService from "@services/rickMorty";
 import { usePagination } from "./usePagination";
+import { mapCharacterData } from "@helpers/mapCharacterData";
 
 export const useCharacterList = () => {
    const { page } = usePagination();
@@ -13,9 +14,9 @@ export const useCharacterList = () => {
       const fetchCharacters = async () => {
          setLoading(true);
          try {
-            const data = await rickMortyService.characters.getAll(page);
-            setCharacters(data.results);
-            setTotalPages(data.info.pages);
+            const { characters, info } = await rickMortyService.characters.getAll(page);
+            setCharacters(characters);
+            setTotalPages(info.pages);
          } catch (err) {
             setError(err.message);
          } finally {

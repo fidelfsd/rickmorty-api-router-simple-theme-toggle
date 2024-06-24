@@ -1,3 +1,5 @@
+import { mapCharacterData } from "@helpers/mapCharacterData";
+
 const BASE_URL = "https://rickandmortyapi.com/api/character";
 
 const characterService = {
@@ -9,7 +11,15 @@ const characterService = {
          if (!response.ok) {
             throw new Error(`Error fetching data: ${response.statusText}`);
          }
-         return await response.json();
+
+         const data = await response.json();
+
+         const mappedCharacters = data.results.map((character) =>
+            mapCharacterData(character)
+         );
+         const info = data.info;
+
+         return { characters: mappedCharacters, info: info };
       } catch (error) {
          console.error("Error in getAll:", error);
          throw error;
@@ -24,7 +34,9 @@ const characterService = {
          if (!response.ok) {
             throw new Error(`Error fetching data: ${response.statusText}`);
          }
-         return await response.json();
+         const character = await response.json();
+
+         return mapCharacterData(character);
       } catch (error) {
          console.error("Error in getById:", error);
          throw error;
