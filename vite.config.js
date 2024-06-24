@@ -13,6 +13,7 @@ export default defineConfig({
          "@styles": path.resolve(__dirname, "src/styles"),
          "@routes": path.resolve(__dirname, "src/routes"),
          "@context": path.resolve(__dirname, "src/context"),
+         "@helpers": path.resolve(__dirname, "src/helpers"),
       },
    },
 });

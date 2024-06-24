@@ -1,4 +1,5 @@
 import rickMortyService from "@services/rickMorty";
+import { mapCharacterData } from "@helpers/mapCharacterData";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -12,7 +13,7 @@ export const useCharacterDetail = () => {
       const fetchCharacter = async () => {
          try {
             const data = await rickMortyService.characters.getById(id);
-            setCharacter(data);
+            setCharacter(mapCharacterData(data));
          } catch (err) {
             setError(err.message);
          } finally {

@@ -4,6 +4,7 @@ import Loader from "@components/common/Loader";
 import Pagination from "@components/common/Pagination";
 import { useCharacterList } from "@hooks/useCharacterList";
 import { usePagination } from "@hooks/usePagination";
+import { mapCharacterData } from "@helpers/mapCharacterData";
 
 export default function CharacterList() {
    const { characters, error, totalPages, loading } = useCharacterList();
@@ -24,7 +25,10 @@ export default function CharacterList() {
          />
          <div className="character-list">
             {characters.map((character) => (
-               <CharacterCard key={character.id} character={character} />
+               <CharacterCard
+                  key={character.id}
+                  character={mapCharacterData(character)}
+               />
             ))}
          </div>
          <Pagination

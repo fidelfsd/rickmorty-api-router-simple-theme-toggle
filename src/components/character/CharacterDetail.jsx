@@ -27,15 +27,15 @@ export default function CharacterDetail() {
                </div>
                <div className="detail-section">
                   <p>
-                     <strong>Origin:</strong> {character.origin.name}
+                     <strong>Origin:</strong> {character.originName}
                   </p>
                   <p>
-                     <strong>Location:</strong> {character.location.name}
+                     <strong>Location:</strong> {character.locationName}
                   </p>
                </div>
                <div className="detail-section">
                   <p>
-                     <strong>Episodes:</strong> {character.episode.length}
+                     <strong>Episodes:</strong> {character.episodeCount}
                   </p>
                </div>
             </div>
