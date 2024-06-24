@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import rickMortyService from "@services/rickMorty";
 import { usePagination } from "./usePagination";
-import { mapCharacterData } from "@helpers/mapCharacterData";
 
 export const useCharacterList = () => {
    const { page } = usePagination();
